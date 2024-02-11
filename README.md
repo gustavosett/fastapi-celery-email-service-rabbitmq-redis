@@ -18,13 +18,13 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-repo-url.git
+git clone https://github.com/gustavosett/fastapi-celery-email-service-rabbitmq-redis.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd your-project-directory
+cd fastapi-celery-email-service-rabbitmq-redis
 ```
 
 
@@ -88,5 +88,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 - Thanks to all the contributors who invest their time and effort to make this project better.
 - Any other acknowledgments, inspirations, and resources used for this project.
-
-Please replace `your-repo-url` and `your-project-directory` with your actual repository URL and project directory.
