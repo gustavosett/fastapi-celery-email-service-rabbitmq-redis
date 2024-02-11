@@ -1,0 +1,42 @@
+version: "3"
+services:
+  web:
+    image: fastapi
+    build: .
+    command: uvicorn main:app --reload --port 8080 --host 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+
+  celery_worker:
+    build: .
+    command: celery -A main.celery_app worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - rabbitmq
+
+  flower:
+    build: .
+    command: celery -A main.celery_app flower broker-api="amqp://guest:guest@rabbitmq:5672//"
+    volumes:
+      - .:/app    
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+      - rabbitmq
+      - celery_worker
+
+  redis:
+    image: redis
+    expose:
+      - "6379"
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
