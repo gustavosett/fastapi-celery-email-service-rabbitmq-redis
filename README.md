@@ -1,4 +1,4 @@
-# Project Title: Open-Source FastAPI Celery Email Service
+# Open-Source FastAPI Celery Email Service
 
 This project is an open-source email service built with Celery, RabbitMQ, and Redis. It's designed to be easy to use and highly scalable. We welcome contributions from anyone interested in improving the service.
 
